@@ -5,6 +5,20 @@ let notas= [];
 function exibirNota(nota) {
     let notaInput = document.querySelector('#nota');
     let valor = notaInput.value;
+    // restrição de campo vazio
+    if (valor === "") {
+        alert("Por favor, insira uma nota.");
+        return;
+    }
+    //
+    
+    // restrição para valor não numérico, e mota entre 0 e 10
+    if (isNaN(valor) || valor < 0 || valor > 10) {
+        alert('A nota digitada é invalida.por favor, insira uma nota válida');
+        return;
+    }    
+    //
+    
     let escopo = document.createElement("div");
     let texto = document.createElement("p");
     texto.innerText = valor;
